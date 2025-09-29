@@ -19,15 +19,17 @@ const alumnos = [
       { name: "Zona Media", porcentaje: 40, peso: 15, color: "#60a5fa" },
     ],
   },
-  {
-    nombre: "Carlos",
-    objetivo: "UMT Patagonia Run 100Millas",
-    fechaObjetivo: "20/12/2025",
+  
+    {
+    nombre: "Nati",
+    objetivo: "Buenos Aires 42K",
+    fechaObjetivo: "31/12/2025",
     progreso: [
-      { name: "Tren Superior", porcentaje: 50, peso: 18, color: "#f87171" },
-      { name: "Tren Inferior", porcentaje: 60, peso: 22, color: "#34d399" },
-      { name: "Zona Media", porcentaje: 75, peso: 35, color: "#60a5fa" },
+      { name: "Tren Superior", porcentaje: 50, peso: 30, color: "#f87171" },
+      { name: "Tren Inferior", porcentaje: 70, peso: 35, color: "#34d399" },
+      { name: "Zona Media", porcentaje: 50, peso: 25, color: "#60a5fa" },
     ],
+    
   },
 ];
 
