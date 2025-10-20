@@ -57,6 +57,16 @@ const alumnos = [
       { dia: "Lun", TrenSuperior: 2, TrenInferior: 6, ZonaMedia: 3 },
       { dia: "Mar", TrenSuperior: 3, TrenInferior: 5, ZonaMedia: 4 },
     ],
+  }, {
+    nombre: "Natiok",
+    objetivo: "Buenos Aires 42K",
+    fechaObjetivo: "31/12/2025",
+    progreso: [
+      { name: "Tren Superior", porcentaje: 50, peso: 30, color: "#f87171" },
+      { name: "Tren Inferior", porcentaje: 70, peso: 35, color: "#34d399" },
+      { name: "Zona Media", porcentaje: 50, peso: 25, color: "#60a5fa" },
+    ],
+    
   },
 ];
 

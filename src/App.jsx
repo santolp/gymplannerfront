@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { AuthProvider } from "./components/AuthContext";
 import NavbarPro from "./components/NavbarPro";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
@@ -11,6 +12,7 @@ import AltaPlanPro from "./components/AltaPlan";
 // import WorkoutDay from "./components/WorkoutDay";
 export default function App() {
   return (
+  <AuthProvider>
     <BrowserRouter>
      <NavbarPro />
       {/* <nav style={{ padding: 10, background: "#0ea5a6", color: "#fff" }}>
@@ -29,13 +31,14 @@ export default function App() {
       </nav> */}
 
       <Routes>
-         <Route path="/" element={<DashboardPro />} />
-        <Route path="/plan-alumno" element={<PlanAlumnoPro />} />
-        <Route path="/alta-plan" element={<AltaPlanPro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
+      <Route path="/" element={<DashboardPro />} />
+          <Route path="/plan-alumno" element={<PlanAlumnoPro />} />
+          <Route path="/alta-plan" element={<AltaPlanPro />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
         {/* <Route path="/plans" element={<Plans />} /> */}
       </Routes>
     </BrowserRouter>
+  </AuthProvider>
   );
 }

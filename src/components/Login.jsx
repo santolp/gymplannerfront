@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-import api from "../api";
+import api from "../api"; 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/components/AuthContext"; 
 
 export default function Login() {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); 
 
   const submit = async (e) => {
     e.preventDefault();
+    console.log("ID:", id);
+    console.log("Password:", pw); 
     try {
       const r = await api.post("/api/auth/login", {
         username: id,
         password: pw,
       });
+
       localStorage.setItem("token", r.data.token);
       localStorage.setItem("userId", r.data.user?.Id || r.data.user?.id || "");
+      login(r.data.token, r.data.user?.Id || r.data.user?.id || ""); 
       navigate("/");
     } catch (e) {
       alert("Usuario o contraseña incorrectos");
@@ -31,15 +37,13 @@ export default function Login() {
       className="min-h-screen flex items-center justify-center relative bg-gray-900"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80')", // 🏋️‍♂️ Foto gimnasio/musculación
+          "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay oscuro */}
       <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div>
 
-      {/* Contenido */}
       <motion.div
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -102,7 +106,3 @@ export default function Login() {
     </div>
   );
 }
-
-
-
-

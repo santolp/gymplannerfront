@@ -1,6 +1,6 @@
 const alumnos = [
   {
-    nombre: "Juancito",
+    nombre: "Juancitoooooo",
     objetivo: "Carrera NYC 42k",
     fechaObjetivo: "12/11/2025",
     progreso: [
